@@ -1,5 +1,6 @@
 package com.bus.bus.model;
 
+import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -7,6 +8,7 @@ import jakarta.persistence.Id;
 import java.util.List;
 import java.util.Map;
 
+@Entity
 public class Route {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,7 +18,7 @@ public class Route {
     private String endPoint;
 
 //    private List<String> stoppage;
-    private Map<String, Integer> stoppage;
+    private List<String> stoppage;
 
     public Route() {
     }
@@ -64,15 +66,15 @@ public class Route {
         this.endPoint = endPoint;
     }
 
-    public Map<String, Integer> getStoppage() {
+    public List<String> getStoppage() {
         return stoppage;
     }
 
-    public void setStoppage(Map<String, Integer> stoppage) {
+    public void setStoppage(List<String> stoppage) {
         this.stoppage = stoppage;
     }
 
-    public Route(Long id, String routeName, String startPoint, String endPoint, Map<String, Integer> stoppage) {
+    public Route(Long id, String routeName, String startPoint, String endPoint, List<String> stoppage) {
         this.id = id;
         this.routeName = routeName;
         this.startPoint = startPoint;

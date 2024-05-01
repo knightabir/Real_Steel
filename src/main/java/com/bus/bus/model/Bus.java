@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 
 import javax.annotation.processing.Generated;
 
+@Entity
 public class Bus {
 
     @Id
